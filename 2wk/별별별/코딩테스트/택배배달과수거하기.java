@@ -7,9 +7,13 @@ class Solution {
         int pick = 0;
         
         for(int i = n-1; i>=0; i--) {
+		
+		del += deliveries[i];
+		pick += pickups[i];
 
-			del += deliveries[i];
-			pick += pickups[i];
+		//		if(cap - del < 0 || cap - pick < 0) {
+		//			d += i+1;
+		//		}
             
             while(del > 0 || pick > 0) {
 				del -= cap;
