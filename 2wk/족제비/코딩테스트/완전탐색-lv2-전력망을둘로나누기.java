@@ -57,10 +57,10 @@ class Solution {
 
         //root node 추가
         bfsQueue.add(rootNode);
-
+        visited[rootNode] = true;
+        
         while (!bfsQueue.isEmpty()) {
           int nextNode = bfsQueue.poll();
-          visited[nextNode] = true;
           count++;
 
           for (Integer node : towerTree.get(nextNode)) {
@@ -69,6 +69,7 @@ class Solution {
             }
 
             bfsQueue.add(node);
+            visited[node] = true;
           }
         }
 
