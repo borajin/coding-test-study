@@ -45,7 +45,7 @@
 | 6️⃣ 60 |  |
 | 🧀 물개 | https://github.com/xheeese/AlgorithmStudy |
 | ⭐별별별 |  |
-| 🎧버즈 |  |
+| 🎧버즈 | [repo](https://github.com/gynhyunkim/Algorithm) |
 
 ### 진행방식
 
