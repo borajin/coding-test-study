@@ -3,16 +3,21 @@
 
 ## 핵심 이론
 ### 원리와 구현 방식
-1. 큰 문제를 작은 문제로 나눌 수 있어야 함
-2. 작은 문제들이 반복되어 나타나고 이 작은 문제들의 해는 항상 같아야 함
+1. 큰 문제를 작은 문제로 나눌 수 있어야 함 (겹치는 소문제)
+2. 작은 문제들이 반복되어 나타나고 이 작은 문제들의 해는 항상 같아야 함 (최적 부분 구조)
 3. 모든 작은 문제들의 해는 **DP 테이블**에 저장하여 재사용한다(memoization)
 4. 탑-다운방식 혹은 바텀-업 방식으로 구현할 수 있음
    * 탑-다운
      * 위에서부터 문제를 파악해 내려오는 방식
-     * 주로 재귀함수 형태
+     * 재귀함수로 구현
+     * 재귀가 깊을 수록 StackOverFlow 에러 발생 가능성 높아짐
+     * 코드 가독성이 좋음
+  * 바텀-업
+    * 가장 작은 문제부터 큰 문제로까지 확장해나가는 방식
+    * 반복문으로 구현
+    * 탑-다운에 비해 안전
        
     
-
 #### 피보나치 수열을 동적 계획법으로 풀기
 ``` D[N] = D[N-1] + D[N-2] ```
 
@@ -29,21 +34,21 @@
    <img width="733" alt="image" src="https://github.com/borajin/coding-test-study/assets/146801542/e3413c70-6f7e-4129-a44f-ea24fc62bfbe">
    
 6A. 탑-다운 구현
-```
-public class P2747_피보나치수_TopDown {
-  static int[] D;
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    D = new int[n + 1];
-    for (int i = 0; i <= n; i++) {
-      D[i] = -1;
-    }
-    D[0] = 0;
-    D[1] = 1;
-    fibo(n);
-    System.out.println(D[n]);
+  ```
+  public class P2747_피보나치수_TopDown {
+    static int[] D;
+    public static void main(String[] args) {
+      // TODO Auto-generated method stub
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      D = new int[n + 1];
+      for (int i = 0; i <= n; i++) {
+        D[i] = -1;
+      }
+      D[0] = 0;
+      D[1] = 1;
+      fibo(n);
+      System.out.println(D[n]);
   }
 
   static int fibo(int n) {
@@ -56,39 +61,26 @@ public class P2747_피보나치수_TopDown {
    
 6B. 바텀-업 구현
 
-
-
 ```
-public class P2747_피보나치수_BottomUp {
-  static int[] D;
-  public static void main(String[] args) {
-    // TODO Auto-generated method stub
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    D = new int[n + 1];
-    for (int i = 0; i <= n; i++) {
-      D[i] = -1;
+  public class P2747_피보나치수_BottomUp {
+    static int[] D;
+    public static void main(String[] args) {
+      // TODO Auto-generated method stub
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      D = new int[n + 1];
+      for (int i = 0; i <= n; i++) {
+        D[i] = -1;
+      }
+      D[0] = 0;
+      D[1] = 1;
+      for (int i = 2; i <= n; i++) {
+        D[i] = D[i - 1] + D[i - 2];
+      }
+      System.out.println(D[n]);
     }
-    D[0] = 0;
-    D[1] = 1;
-    for (int i = 2; i <= n; i++) {
-      D[i] = D[i - 1] + D[i - 2];
-    }
-    System.out.println(D[n]);
   }
-}
 ```
-
-
-### 사용 조건
-#### 겹치는 소문제 (Overlapping Subproblems)
-이미 해결한 작은 부분 문제의 결과를 저장하고 재사용함으로써 계산 효율성을 향상
-
-
-#### 최적 부분 구조 (Optimal Substructure)
-큰 문제의 최적해는 작은 부분 문제의 최적해로부터 파생. 즉, 문제를 작게 나누어 해결하더라도 전체 문제에 대한 최적해를 얻을 수 있어야 함
-
-### 메모이제이션(Memoization)과 테이블
 
 
 ### 문제 유형
