@@ -15,6 +15,7 @@
   * 바텀-업
     * 가장 작은 문제부터 큰 문제로까지 확장해나가는 방식
     * 반복문으로 구현
+    * 필요없는 것까지도 계산하게 된다는 단점
     * 탑-다운에 비해 안전
        
     
@@ -35,7 +36,7 @@
    
 6A. 탑-다운 구현
   ```
-  public class P2747_피보나치수_TopDown {
+  public class TopDown {
     static int[] D;
     public static void main(String[] args) {
       // TODO Auto-generated method stub
@@ -62,7 +63,7 @@
 6B. 바텀-업 구현
 
 ```
-  public class P2747_피보나치수_BottomUp {
+  public class BottomUp {
     static int[] D;
     public static void main(String[] args) {
       // TODO Auto-generated method stub
@@ -82,6 +83,8 @@
   }
 ```
 
+### 시간 복잡도
+O(N)
 
 ### 문제 유형
 * 피보나치 수열 계산
