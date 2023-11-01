@@ -44,7 +44,7 @@
 | 😽 족제비 | https://github.com/borajin/algorithm-study |
 | 6️⃣ 60 |  |
 | 🧀 물개 | https://github.com/xheeese/AlgorithmStudy |
-| ⭐별별별 |  |
+| ⭐별별별 | https://github.com/ej522/algorithmStudy |
 | 🎧버즈 | [repo](https://github.com/gynhyunkim/Algorithm) |
 
 ### 진행방식
