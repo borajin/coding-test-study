@@ -41,7 +41,7 @@
 1일 1커밋 깃허브 잔디 심기 (꾸준히~)
 |닉네임|깃 repo|
 | --- | --- |
-| 😽 족제비 | 깃 repo 주소 적기 |
+| 😽 족제비 | [repo](https://github.com/borajin/algorithm-study/tree/main) |
 | 6️⃣ 60 |  |
 | 🧀 물개 | https://github.com/xheeese/AlgorithmStudy |
 | ⭐별별별 |  |
