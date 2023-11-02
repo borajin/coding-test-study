@@ -8,7 +8,9 @@ public class 정수삼각형 {
     //마지막 줄은 그 자체로 최대값이므로 제외 (length-2)
     for (int i=triangle.length-2; i>=0; i--) {
       for (int j=0; j<triangle[i].length; j++) {
-        triangle[i][j] = Math.max(triangle[i][j] + triangle[i+1][j], triangle[i][j] + triangle[i+1][j+1]);
+        int left =  triangle[i+1][j];
+        int right =  triangle[i+1][j+1];
+        triangle[i][j] = Math.max(triangle[i][j] + left, triangle[i][j] + right);
       }
     }
 
