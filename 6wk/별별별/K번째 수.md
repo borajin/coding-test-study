@@ -52,7 +52,7 @@ while (lo < hi) {
     //min(mid/i, N)인 이유
     //배열에 들어가는 값이 i*1, i*2 ... i*j로 한 행의 열의 개수를 넘지 않기 때문
     for (int i=1; i<=N; i++) {
-      count += Math.min(mid/i, N);
+      count += Math.min(mid/i, N);  //x보다 작거나 같은 개수 => mid보다 작거나 같은 개수
     }
 
     if (count < K)
