@@ -1,6 +1,6 @@
 import java.util.*;
 
-//오버플로우 방지를 위해 long으로 받음
+//오버플로우 방지를 위해 타입은 모두 long
 class Solution {
     public long solution(int n, int[] times) {
         long answer = 0;
